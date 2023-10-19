@@ -35,10 +35,10 @@ public class Zamowienie extends Dokument {
     @Override
     public void export(String format) {
         ArrayList<String> data = new ArrayList<>();
-        String filePath = "src/main/java/pl/patri0s/files/zamowienie/zamowienie";
+        String filePath = "src/main/java/pl/patri0s/files/zamowienie/";
         switch (format) {
             case "HTML":
-                filePath = filePath.concat(".html");
+                filePath = filePath.concat("zamowienie.html");
                 data.add("<!DOCTYPE html>");
                 data.add("<html lang=\"pl\">");
                 data.add("<head><meta charset=\"UTF-8\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"> <title>Zamowienie nr " + getNumer() + "</title></head>");
@@ -53,7 +53,7 @@ public class Zamowienie extends Dokument {
                 data.add("</html>");
                 break;
             case "CSV":
-                filePath = filePath.concat(".csv");
+                filePath = filePath.concat("zamowienie.csv");
                 data.add("Zamowienie nr," + getNumer());
                 data.add("Wystawca," + getWystawca());
                 data.add("Odbiorca," + getOdbiorca());
@@ -62,7 +62,7 @@ public class Zamowienie extends Dokument {
                 data.add("Rabat," + getRabat());
                 break;
             case "XML":
-                filePath = filePath.concat(".xml");
+                filePath = filePath.concat("zamowienie.xml");
                 data.add("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
                 data.add("<zamowienie numer=\"" + getNumer() + "\">");
                 data.add("<wystawca>" + getWystawca() + "</wystawca>");
